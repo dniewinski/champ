@@ -1,5 +1,5 @@
 
-# champ [![Build Status](https://travis-ci.org/chvmp/champ.svg?branch=master)](https://travis-ci.org/chvmp/champ) 
+# champ [![Build Status](https://travis-ci.org/chvmp/champ.svg?branch=master)](https://travis-ci.org/chvmp/champ)
 ROS Packages for CHAMP Quadruped Controller.
 
 ![champ](https://raw.githubusercontent.com/chvmp/champ/master/docs/images/robots.gif)
@@ -10,7 +10,7 @@ Core Features:
 
 - Fully Autonomous (using ROS navigation Stack).
 - [Setup-assistant](https://github.com/chvmp/champ_setup_assistant) to configure newly built robots.
-- Collection of pre-configured [URDFs](https://github.com/chvmp/robots) like Anymal, MIT Mini Cheetah, Boston Dynamic's Spot and LittleDog. 
+- Collection of pre-configured [URDFs](https://github.com/chvmp/robots) like Anymal, MIT Mini Cheetah, Boston Dynamic's Spot and LittleDog.
 - Gazebo simulation environment.
 - Compatible with DIY quadruped projects like [SpotMicroAI](https://spotmicroai.readthedocs.io/en/latest/) and [OpenQuadruped](https://github.com/adham-elarabawy/open-quadruped).
 - Demo Applications like [TOWR](https://github.com/ethz-adrl/towr) and [chicken head](https://github.com/chvmp/chicken_head) stabilization.
@@ -61,7 +61,7 @@ If you want to use a [joystick](https://www.logitechg.com/en-hk/products/gamepad
 
 #### 2.2.1 Run the Gazebo environment:
 
-    roslaunch champ_config gazebo.launch 
+    roslaunch champ_config gazebo.launch
 
 #### 2.2.2 Run gmapping package and move_base:
 
@@ -81,9 +81,9 @@ To start mapping:
 
 ### 2.3 Autonomous Navigation:
 
-#### 2.3.1 Run the Gazebo environment: 
+#### 2.3.1 Run the Gazebo environment:
 
-    roslaunch champ_config gazebo.launch 
+    roslaunch champ_config gazebo.launch
 
 #### 2.3.2 Run amcl and move_base:
 
@@ -104,7 +104,7 @@ Linux Machine
 - Use this ROS package to calculate the joint angles and send it to a hardware interface to control your actuators. You can follow these [guidelines](https://github.com/chvmp/champ/wiki/Hardware-Integration) to create your actuators' interface.
 
 Lightweight Version
-- Run CHAMP's [lightweight version](https://github.com/chvmp/firmware) on Teensy series microcontrollers and use it to directly control your actuators. 
+- Run CHAMP's [lightweight version](https://github.com/chvmp/firmware) on Teensy series microcontrollers and use it to directly control your actuators.
 
 ### 3.1 Generate robot configuration
 
@@ -141,7 +141,7 @@ Example Usage:
 View your newly configured robot:
 
     roslaunch <myrobot_config> bringup.launch rviz:true
-    
+
 Run real robot with a microcontroller:
 
     roslaunch <myrobot_config> bringup.launch lite:=true
@@ -156,7 +156,7 @@ Run gmapping package and move_base:
 
 To open RVIZ and view the map:
 
-    roscd champ_navigation/rviz 
+    roscd champ_navigation/rviz
     rviz -d navigate.rviz
 
 To start mapping:
@@ -180,7 +180,7 @@ Run amcl and move_base:
 
 To open RVIZ and view the map:
 
-    roscd champ_navigation/rviz 
+    roscd champ_navigation/rviz
     rviz -d navigate.rviz
 
 To navigate:
@@ -196,7 +196,7 @@ Run Gazebo and the base driver in simulation mode:
 
     roslaunch <myrobot_config> gazebo.launch
 
-* Take note that in order for this to work, the URDF has to be Gazebo compatible and has [ros_control](http://gazebosim.org/tutorials/?tut=ros_control) capability. The controllers have been set-up so all you need is to add the transmission of the actuators. You also need to get the physics parameters right like your mass, inertia, and foot friction. 
+* Take note that in order for this to work, the URDF has to be Gazebo compatible and has [ros_control](http://gazebosim.org/tutorials/?tut=ros_control) capability. The controllers have been set-up so all you need is to add the transmission of the actuators. You also need to get the physics parameters right like your mass, inertia, and foot friction.
 
    Some useful resources on getting these parameters right:
 
@@ -212,7 +212,7 @@ You can also check out [this](https://github.com/moribots/spot_mini_mini/pull/7)
 
 Run Gazebo and default simulation world:
 
-    roslaunch champ_gazebo spawn_world.launch 
+    roslaunch champ_gazebo spawn_world.launch
 
 You can also load your own world file by passing your world's path to 'gazebo_world' argument:
 
@@ -220,9 +220,9 @@ You can also load your own world file by passing your world's path to 'gazebo_wo
 
 Spawning a robot:
 
-    roslaunch champ_config spawn_robot.launch robot_name:=<unique_robot_name> world_init_x:=<x_position> world_init_y:=<y_position>
+    roslaunch champ_config spawn_robot.launch robot_name:=<unique_robot_name> world_init_x:=<x_position> world_init_y:=<y_position> world_init_z:=<z_position>
 
-    
+
 * Every instance of the spawned robot must have a unique robot name to prevent the topics and transforms from clashing.
 
 
